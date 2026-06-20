@@ -1,5 +1,6 @@
 <script setup>
 import { addItemToCart } from "@/utils/cartUtils"
+import { formataPreco } from "@/utils/currencyUtils"
 const props = defineProps({
   product: {
     type: Object,
@@ -12,24 +13,24 @@ const props = defineProps({
 <template>
   <article class="card">
     <div class="image-container">
-      <img :src="props.product.image" :alt="product.name">
+      <img :src="product.image" :alt="product.name">
     </div>
 
     <div class="content">
-      <h3>{{ props.product.name }}</h3>
+      <h3>{{ product.name }}</h3>
 
       <p class="description">
-        {{ props.product.description }}
+        {{ product.description }}
       </p>
 
       <div class="rating">
-        {{ props.product.rating }}
-        <span>({{ props.product.reviews }} avaliações)</span>
+        {{ product.rating }}
+        <span>({{ product.reviews }} avaliações)</span>
       </div>
 
       <div class="footer">
         <span class="price">
-          R$ {{ props.product.price.toFixed(2) }}
+         {{ formataPreco(product.price)}}
         </span>
 
         <button @click="addItemToCart">
