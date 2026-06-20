@@ -1,17 +1,3 @@
-<script setup>
-import { formataPreco } from '@/utils/currencyUtils.js'
-import { Trash2, Package, Tag } from '@lucide/vue'
-
-defineProps({
-  item: {
-    type: Object,
-    required: true
-  }
-})
-
-defineEmits(['remove', 'increase', 'decrease'])
-</script>
-
 <template>
   <div class="cart-item">
     <div class="product-image">
@@ -56,6 +42,19 @@ defineEmits(['remove', 'increase', 'decrease'])
   </div>
 </template>
 
+<script setup>
+import { formataPreco } from '@/utils/currencyUtils.js'
+import { Trash2, Package, Tag } from '@lucide/vue'
+
+defineProps({
+  item: {
+    type: Object,
+    required: true
+  }
+})
+
+defineEmits(['remove', 'increase', 'decrease'])
+</script>
 <style scoped>
 .cart-item {
   display: flex;
