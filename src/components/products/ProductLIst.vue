@@ -11,7 +11,7 @@ import { products } from '@/data/products.js'
 .products {
   padding: 2vw 2vw 2vw 4vw;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
 }
 </style>
