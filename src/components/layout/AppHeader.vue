@@ -9,7 +9,6 @@ import { Search, ShoppingCart } from '@lucide/vue';
         <h1>Vexo</h1>
       </li>
     </ul>
-
     <ul class="links">
       <li>
         <router-link to="/">

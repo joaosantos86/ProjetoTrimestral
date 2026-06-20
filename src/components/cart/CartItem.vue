@@ -33,7 +33,7 @@
       </span>
 
       <span class="price">
-        R$ {{ item.price.toFixed(2) }}
+        R$ {{ formataPreco(item.price) }}
       </span>
 
       <button
@@ -47,11 +47,12 @@
 </template>
 
 <script setup>
+import { formataPreco } from '@/utils/currencyUtils.js'
 import {
   Trash2,
   Package,
   Tag
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 
 defineProps({
   item: {

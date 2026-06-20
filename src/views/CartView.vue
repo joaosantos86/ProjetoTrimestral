@@ -59,7 +59,7 @@
 
         <input class="coupon" placeholder="Cupom de desconto" />
 
-   
+
         <button class="checkout">
           Finalizar compra
         </button>
@@ -79,15 +79,17 @@ import { computed } from 'vue'
 import {
   ShoppingCart,
   ShoppingBag
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 
 import CartItem from '@/components/cart/CartItem.vue'
 
 import {
   cart,
   removeItemFromCart,
-  getCartTotalPrice
-} from '@/utils/cartUtils'
+  getCartTotalPrice,
+} from "@/utils/cartUtils"
+
+import { formataPreco } from '@/utils/currencyUtils.js'
 
 const total = computed(() => getCartTotalPrice())
 
@@ -101,7 +103,6 @@ const decrease = (item) => {
   if (item.quantity > 1) item.quantity--
 }
 
-import formataPreco from 'src/utils/currency/utils.js'
 </script>
 
 <style scoped>
