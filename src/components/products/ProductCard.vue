@@ -15,24 +15,19 @@ const props = defineProps({
     <div class="image-container">
       <img :src="product.image" :alt="product.name">
     </div>
-
     <div class="content">
       <h3>{{ product.name }}</h3>
-
       <p class="description">
         {{ product.description }}
       </p>
-
       <div class="rating">
         {{ product.rating }}
         <span>({{ product.reviews }} avaliações)</span>
       </div>
-
       <div class="footer">
         <span class="price">
          {{ formataPreco(product.price)}}
         </span>
-
         <button @click="addItemToCart">
           Adicionar
         </button>
