@@ -36,7 +36,7 @@
 
         <div class="row">
           <span>Subtotal</span>
-          <span>{{ format(total) }}</span>
+          <span>{{ formataPreco(total) }}</span>
         </div>
 
         <div class="row">
@@ -53,7 +53,7 @@
 
         <div class="total">
           <span>Total</span>
-          <strong>{{ format(total) }}</strong>
+          <strong>{{ formataPreco(total) }}</strong>
         </div>
 
 
@@ -101,11 +101,7 @@ const decrease = (item) => {
   if (item.quantity > 1) item.quantity--
 }
 
-const format = (v) =>
-  new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(v)
+import formataPreco from 'src/utils/currency/utils.js'
 </script>
 
 <style scoped>

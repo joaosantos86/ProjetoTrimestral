@@ -1,6 +1,11 @@
-export function formatPrice(value) {
-  return new Intl.NumberFormat('pt-BR', {
+const moedaPais = 'BRL'
+const idioma = 'pt-BR'
+
+function formataPreco(preco) {
+  return Number(preco).toLocaleString(idioma, {
     style: 'currency',
-    currency: 'BRL'
-  }).format(value)
+    currency: moedaPais
+  })
 }
+
+export { formataPreco }
