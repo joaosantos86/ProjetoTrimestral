@@ -16,10 +16,24 @@ export function removeItemFromCart(idItem) {
   cart.value = cart.value.filter((item) => item.id !== idItem)
 }
 
+export function increaseItemQuantity(idItem) {
+  const item = cart.value.find((produto) => produto.id === idItem)
+
+  if (item) item.quantity += 1
+}
+
+export function decreaseItemQuantity(idItem) {
+  const item = cart.value.find((produto) => produto.id === idItem)
+
+  if (item && item.quantity > 1) {
+    item.quantity -= 1
+  }
+}
+
 export function updateQuantity(idItem) {
-  cart.value.forEach((item) => {
-    if (item.id === idItem) item.quantity += 1
-  })
+  const item = cart.value.find((produto) => produto.id === idItem)
+
+  if (item) item.quantity += 1
 }
 
 export function getCartTotalPrice() {

@@ -18,14 +18,8 @@
 
       <div class="items">
 
-        <CartItem
-          v-for="item in cart"
-          :key="item.id"
-          :item="item"
-          @remove="removeItem"
-          @increase="increase"
-          @decrease="decrease"
-        />
+        <CartItem v-for="item in cart" :key="item.id" :item="item" @remove="removeItem" @increase="increase"
+          @decrease="decrease" />
 
       </div>
 
@@ -86,6 +80,8 @@ import CartItem from '@/components/cart/CartItem.vue'
 import {
   cart,
   removeItemFromCart,
+  increaseItemQuantity,
+  decreaseItemQuantity,
   getCartTotalPrice,
 } from "@/utils/cartUtils"
 
@@ -95,14 +91,13 @@ const total = computed(() => getCartTotalPrice())
 
 const removeItem = (id) => removeItemFromCart(id)
 
-const increase = (item) => {
-  item.quantity++
+const increase = (id) => {
+  increaseItemQuantity(id)
 }
 
-const decrease = (item) => {
-  if (item.quantity > 1) item.quantity--
+const decrease = (id) => {
+  decreaseItemQuantity(id)
 }
-
 </script>
 
 <style scoped>
@@ -137,11 +132,11 @@ const decrease = (item) => {
 
 
 .summary {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
 
 .row {

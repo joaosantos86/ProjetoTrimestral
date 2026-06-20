@@ -1,10 +1,21 @@
+<script setup>
+import { formataPreco } from '@/utils/currencyUtils.js'
+import { Trash2, Package, Tag } from '@lucide/vue'
+
+defineProps({
+  item: {
+    type: Object,
+    required: true
+  }
+})
+
+defineEmits(['remove', 'increase', 'decrease'])
+</script>
+
 <template>
   <div class="cart-item">
     <div class="product-image">
-      <img
-        :src="item.image || 'https://placehold.co/150x150?text=Fone'"
-        :alt="item.name"
-      />
+      <img :src="item.image || 'https://placehold.co/150x150?text=Fone'" :alt="item.name" />
     </div>
 
     <div class="product-info">
@@ -28,41 +39,22 @@
     </div>
 
     <div class="product-side">
-      <span class="quantity">
-        {{ item.quantity }}x
-      </span>
+      <div class="quantity-controls">
+        <button type="button" @click="$emit('decrease', item.id)">-</button>
+        <span class="quantity">{{ item.quantity }}</span>
+        <button type="button" @click="$emit('increase', item.id)">+</button>
+      </div>
 
       <span class="price">
-        R$ {{ formataPreco(item.price) }}
+        {{ formataPreco(item.price * item.quantity) }}
       </span>
 
-      <button
-        class="remove-btn"
-        @click="$emit('remove', item.id)"
-      >
+      <button class="remove-btn" @click="$emit('remove', item.id)">
         <Trash2 :size="18" />
       </button>
     </div>
   </div>
 </template>
-
-<script setup>
-import { formataPreco } from '@/utils/currencyUtils.js'
-import {
-  Trash2,
-  Package,
-  Tag
-} from '@lucide/vue'
-
-defineProps({
-  item: {
-    type: Object,
-    required: true
-  }
-})
-
-defineEmits(['remove'])
-</script>
 
 <style scoped>
 .cart-item {
@@ -79,7 +71,7 @@ defineEmits(['remove'])
   border: 1px solid #e2e8f0;
 
   box-shadow:
-    0 4px 20px rgba(15,23,42,.06);
+    0 4px 20px rgba(15, 23, 42, .06);
 
   transition: all .25s ease;
 }
@@ -88,7 +80,7 @@ defineEmits(['remove'])
   transform: translateY(-4px);
 
   box-shadow:
-    0 12px 30px rgba(15,23,42,.12);
+    0 12px 30px rgba(15, 23, 42, .12);
 }
 
 .product-image {
@@ -149,6 +141,35 @@ defineEmits(['remove'])
   flex-direction: column;
   align-items: flex-end;
   gap: .8rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: .2rem .4rem;
+}
+
+.quantity-controls button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #1f2937;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  transition: background .2s ease;
+}
+
+.quantity-controls button:hover {
+  background: #111827;
 }
 
 .quantity {

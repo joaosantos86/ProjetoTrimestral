@@ -26,9 +26,9 @@ const props = defineProps({
       </div>
       <div class="footer">
         <span class="price">
-         {{ formataPreco(product.price)}}
+          {{ formataPreco(product.price) }}
         </span>
-        <button @click="addItemToCart">
+        <button @click="addItemToCart(product)">
           Adicionar
         </button>
       </div>
