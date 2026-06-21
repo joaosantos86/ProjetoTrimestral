@@ -1,6 +1,6 @@
 <script setup>
-import { addItemToCart } from "@/utils/cartUtils"
-import { formataPreco } from "@/utils/currencyUtils"
+import { addItemToCart } from "@/shared/utils/cartUtils"
+import { formataPreco } from "@/shared/utils/currencyUtils"
 const props = defineProps({
   product: {
     type: Object,

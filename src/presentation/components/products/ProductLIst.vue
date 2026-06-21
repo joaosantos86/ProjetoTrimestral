@@ -1,6 +1,6 @@
 <script setup>
 import ProductCard from '@/components/products/ProductCard.vue'
-import { products } from '@/data/products.js'
+import { products } from '@/domains/catalog/data/products.js'
 </script>
 <template>
   <section class="products">

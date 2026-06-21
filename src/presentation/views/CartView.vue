@@ -83,9 +83,9 @@ import {
   increaseItemQuantity,
   decreaseItemQuantity,
   getCartTotalPrice,
-} from "@/utils/cartUtils"
+} from "@/shared/utils/cartUtils"
 
-import { formataPreco } from '@/utils/currencyUtils.js'
+import { formataPreco } from '@/shared/utils/currencyUtils.js'
 
 const total = computed(() => getCartTotalPrice())
 

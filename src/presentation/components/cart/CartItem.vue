@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { formataPreco } from '@/utils/currencyUtils.js'
+import { formataPreco } from '@/shared/utils/currencyUtils.js'
 import { Trash2, Package, Tag } from '@lucide/vue'
 
 defineProps({
