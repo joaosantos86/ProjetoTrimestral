@@ -75,7 +75,7 @@ import {
   ShoppingBag
 } from '@lucide/vue'
 
-import CartItem from '@/components/cart/CartItem.vue'
+import CartItem from '@/presentation/components/cart/CartItem.vue'
 
 import {
   cart,

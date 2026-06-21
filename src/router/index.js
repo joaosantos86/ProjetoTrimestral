@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from '@/views/HomeView.vue'
-import CatalogView from '@/views/CatalogView.vue'
-import CartView from '@/views/CartView.vue'
+import HomeView from '@/presentation/views/HomeView.vue'
+import CatalogView from '@/presentation/views/CatalogView.vue'
+import CartView from '@/presentation/views/CartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

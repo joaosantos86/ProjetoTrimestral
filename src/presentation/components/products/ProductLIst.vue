@@ -1,5 +1,5 @@
 <script setup>
-import ProductCard from '@/components/products/ProductCard.vue'
+import ProductCard from '@/presentation/components/products/ProductCard.vue'
 import { products } from '@/domains/catalog/data/products.js'
 </script>
 <template>

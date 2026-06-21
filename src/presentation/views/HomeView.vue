@@ -1,5 +1,5 @@
 <script setup>
-import ProductList from "@/components/products/ProductLIst.vue";
+import ProductList from "@/presentation/components/products/ProductLIst.vue";
 
 </script>
 
@@ -20,7 +20,7 @@ import ProductList from "@/components/products/ProductLIst.vue";
     </div>
 
     <div class="envelope-imagem">
-      <img src="/headphone1.png" alt="Fone Bluetooth IPX8" class="imagem-destaque" />
+      <img src="/images/headsets/headset1.png" alt="Fone Bluetooth IPX8" class="imagem-destaque" />
     </div>
   </section>
   <section class="secao-mais-vendidos">
@@ -136,6 +136,4 @@ import ProductList from "@/components/products/ProductLIst.vue";
   position: relative;
   display: inline-block;
 }
-
-
 </style>
